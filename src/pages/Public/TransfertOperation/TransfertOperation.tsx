@@ -1,4 +1,4 @@
-// import QuizForm from "../../../components/QuizForm/QuizForm";
+
 import QuizForm from "../../../components/OperationForm//OperationForm";
 import PageTitle from "../../../components/PageTitle/PageTitle";
 import { CREATE_QUIZ_PAGE_TITLE } from "../../../constants/Constants";
@@ -15,7 +15,7 @@ const TransfertOperation = () => {
         console.log("+++++>operation",operation)
         HttpClient.post('/perform', operation).then(() => {
             ToastService.success('Transfert effectué avec succès');
-            navigate('/admin/quiz');
+            navigate('/');
         });
         console.log("+++++>HttpClient",HttpClient)
     }

@@ -1,5 +1,6 @@
 import axios from "axios";
 import ToastService from "./ToastService";
+import type { Operation } from "../models/Operation";
 // import UserService from "./UserService";
 
 const Axios = axios.create({
@@ -14,8 +15,18 @@ class HttpClient {
     return Axios.get<T>(url, this.getAuthorizationHeader());
   }
 
-  post(url: string, data: any) {
-    return Axios.post(url, data, this.getAuthorizationHeader());
+  // post(url: string, data: any) {
+  //   return Axios.post(url, data, this.getAuthorizationHeader());
+  // }
+//     post(url: string, data: any) {
+//       console.log("======>url et datas",url, data)
+//     return Axios.post(url, data, {
+//   headers: { "Content-Type": "application/json" }
+// });
+//   }
+    post(url: string, data: Operation) {
+      console.log("======>url et datas",url, data)
+    return Axios.post(url, data)
   }
 
   put(url: string, data: any) {
